@@ -3,6 +3,12 @@
   email {$ACME_EMAIL}
 }
 
-example.com {
-  respond "Hello, world!"
+adminer.example.com {
+  encode zstd gzip
+  reverse_proxy adminer:8080
+}
+
+rabbitmq.example.com {
+  encode zstd gzip
+  reverse_proxy rabbitmq:15672
 }

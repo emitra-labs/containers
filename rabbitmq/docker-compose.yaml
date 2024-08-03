@@ -1,0 +1,19 @@
+services:
+  rabbitmq:
+    container_name: rabbitmq
+    hostname: rabbitmq
+    image: rabbitmq:3.13-management-alpine
+    restart: unless-stopped
+    env_file: .env
+    networks:
+      - main
+    volumes:
+      - data:/var/lib/rabbitmq
+
+networks:
+  main:
+    name: main
+    external: true
+
+volumes:
+  data:

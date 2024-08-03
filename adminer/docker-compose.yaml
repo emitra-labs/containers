@@ -1,0 +1,12 @@
+services:
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: unless-stopped
+    networks:
+      - main
+
+networks:
+  main:
+    name: main
+    external: true

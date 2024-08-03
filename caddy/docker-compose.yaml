@@ -1,0 +1,22 @@
+services:
+  caddy:
+    container_name: caddy
+    image: caddy:2.8-alpine
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:80:80"
+    networks:
+      - main
+    volumes:
+      - data:/data
+      - config:/config
+      - ./Caddyfile:/etc/caddy/Caddyfile
+
+networks:
+  main:
+    name: main
+    external: true
+
+volumes:
+  data:
+  config:

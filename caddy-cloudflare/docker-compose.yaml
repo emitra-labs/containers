@@ -1,0 +1,23 @@
+services:
+  caddy-cloudflare:
+    container_name: caddy-cloudflare
+    image: technoguyfication/caddy-cloudflare:latest
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "443:443"
+    networks:
+      - main
+    volumes:
+      - data:/data
+      - config:/config
+      - ./Caddyfile:/etc/caddy/Caddyfile
+
+networks:
+  main:
+    name: main
+    external: true
+
+volumes:
+  data:
+  config:

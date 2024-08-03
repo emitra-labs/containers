@@ -1,0 +1,13 @@
+services:
+  mail-service:
+    container_name: mail-service
+    image: ghcr.io/emitra-labs/mail-service:main
+    restart: unless-stopped
+    env_file: .env
+    networks:
+      - main
+
+networks:
+  main:
+    name: main
+    external: true

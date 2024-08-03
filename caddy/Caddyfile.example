@@ -3,6 +3,11 @@ adminer.localhost:80 {
   reverse_proxy adminer:8080
 }
 
+maildev.localhost:80 {
+  encode zstd gzip
+  reverse_proxy maildev:1080
+}
+
 rabbitmq.localhost:80 {
   encode zstd gzip
   reverse_proxy rabbitmq:15672

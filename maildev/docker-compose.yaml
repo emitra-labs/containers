@@ -1,0 +1,16 @@
+services:
+  maildev:
+    container_name: maildev
+    image: maildev/maildev
+    restart: unless-stopped
+    healthcheck:
+      disable: true
+    ports:
+      - "127.0.0.1:1025:1025"
+    networks:
+      - main
+
+networks:
+  main:
+    name: main
+    external: true

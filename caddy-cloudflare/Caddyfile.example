@@ -8,6 +8,11 @@ adminer.example.com {
   reverse_proxy adminer:8080
 }
 
+maildev.example.com {
+  encode zstd gzip
+  reverse_proxy maildev:1080
+}
+
 rabbitmq.example.com {
   encode zstd gzip
   reverse_proxy rabbitmq:15672

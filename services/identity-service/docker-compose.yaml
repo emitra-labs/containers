@@ -1,13 +1,13 @@
 services:
-  mail-service:
-    container_name: mail-service
-    image: ghcr.io/emitra-labs/mail-service:main
+  identity-service:
+    container_name: identity-service
+    image: ghcr.io/emitra-labs/identity-service:main
     restart: unless-stopped
     env_file: .env
     networks:
       - main
     ports:
-      - 127.0.0.1:14000:4000
+      - 127.0.0.1:13000:3000
 
 networks:
   main:

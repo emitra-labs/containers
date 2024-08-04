@@ -1,0 +1,12 @@
+services:
+  landing-page:
+    container_name: landing-page
+    image: ghcr.io/emitra-labs/landing-page:main
+    restart: unless-stopped
+    networks:
+      - main
+
+networks:
+  main:
+    name: main
+    external: true

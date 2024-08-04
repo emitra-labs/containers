@@ -1,0 +1,12 @@
+services:
+  ui:
+    container_name: ui
+    image: ghcr.io/emitra-labs/ui:main
+    restart: unless-stopped
+    networks:
+      - main
+
+networks:
+  main:
+    name: main
+    external: true

@@ -1,0 +1,13 @@
+services:
+  account-web:
+    container_name: account-web
+    image: ghcr.io/emitra-labs/account-web:main
+    restart: unless-stopped
+    env_file: .env
+    networks:
+      - main
+
+networks:
+  main:
+    name: main
+    external: true
